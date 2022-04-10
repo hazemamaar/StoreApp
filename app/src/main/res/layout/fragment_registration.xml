@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:fillViewport="true"
+    tools:context=".Registration">
+
+     <LinearLayout
+         android:id="@+id/parentlinear"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_marginTop="8dp"
+         android:orientation="vertical">
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/linearsign"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+
+              >
+          <ImageView
+              android:id="@+id/backsign"
+              android:layout_width="35dp"
+              android:layout_height="30dp"
+               android:src="@drawable/ic_baseline_arrow_back_24"
+               android:layout_weight="0"
+              android:layout_marginTop="7dp"
+              android:layout_marginEnd="5dp"
+
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+
+
+              />
+
+               <TextView
+                   android:id="@+id/txtsign"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+
+
+                   android:layout_marginTop="4dp"
+                   android:layout_marginEnd="1dp"
+                   android:fontFamily="@font/poppins_bold"
+                   android:text="Sign Up"
+                   android:textColor="@color/black"
+                   android:textSize="25sp"
+                   android:textStyle="bold"
+                   app:layout_constraintBottom_toBottomOf="@id/backsign"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toEndOf="@id/backsign"
+                   app:layout_constraintTop_toTopOf="@id/backsign"
+                   />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/conshed"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+               <TextView
+                   android:id="@+id/creatacctxt"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="6dp"
+                   android:layout_marginTop="10dp"
+                   android:fontFamily="@font/average_sans"
+                   android:text="Create Accont"
+                   android:textColor="@color/black"
+                   android:textSize="25sp"
+                   android:textStyle="bold"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+
+               <TextView
+                   android:id="@+id/txtdescrip1"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="13dp"
+                   android:layout_marginTop="15dp"
+                   android:fontFamily="@font/poppins_italic"
+                   android:text="Enter your Name, Email address  and Password "
+                   android:textColor="@color/black"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/creatacctxt" />
+
+               <LinearLayout
+                   android:id="@+id/lineartxt"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="13dp"
+                   android:layout_marginTop="10dp"
+                   android:orientation="horizontal"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/txtdescrip1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="for sign up. "
+                        android:fontFamily="@font/poppins_italic"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/poppins_semibold_italic"
+                        android:text="Aleardy have account?"
+                        android:textColor="@color/darkblue"
+                        android:textSize="20sp" />
+
+               </LinearLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/inputTextLayoutUserName"
+                   style="@style/text_input_style"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="25dp"
+                   android:hint="Username"
+
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/lineartxt"
+                   app:layout_constraintBottom_toTopOf="@id/inputTextLayoutEmail"
+                   app:startIconDrawable="@drawable/user">
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/inputTextLayoutEmail"
+                   style="@style/text_input_style"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   android:hint="E-Mail"
+
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/inputTextLayoutUserName"
+                   app:startIconDrawable="@drawable/email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="22sp" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/inputTextLayoutPassword"
+                   style="@style/text_input_style"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   android:hint="Password"
+
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/inputTextLayoutEmail"
+                   app:startIconDrawable="@drawable/lock">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:padding="22sp" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTextUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="22sp" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/createAccount_btn"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   style="@style/button_style"
+                   android:fontFamily="@font/poppins_semibold"
+                   android:text="Create Account"
+                   android:textSize="20sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+
+                   app:layout_constraintTop_toBottomOf="@id/inputTextLayoutPassword" />
+               <TextView
+                   android:id="@+id/or"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/black"
+                   android:text="OR"
+                   app:layout_constraintTop_toBottomOf="@id/createAccount_btn"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:layout_marginTop="15dp"
+                   android:textSize="25dp"
+                   android:textStyle="bold"
+                   />
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/facebook_btn"
+                   style="@style/button_facebook_style"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/poppins"
+                   android:text="Connect With Face Book"
+                   android:textSize="20sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/or" />
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/google"
+                   style="@style/button_google_style"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/poppins"
+                   android:text="Connect With Face Book"
+                   android:textSize="20sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/facebook_btn" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+     </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

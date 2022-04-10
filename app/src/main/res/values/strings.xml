@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Store App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sell">Sell</string>
+    <string name="buy">Buy</string>
+    <string name="getreward">Get Reward</string>
+    <string name="selldes">   Sell your product with your require \n         money.And easy to post.</string>
+    <string name="buydes">  Buy any product in your like. Get it  \n     easily and high quality product.</string>
+    <string name="getdes">       We giving regularly reward to our \n          lucky clients.</string>
+</resources>

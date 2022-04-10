@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OnBoarding">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/txtskip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/barlow_medium_italic"
+        android:text="skip"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/darkblue"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpaggersplash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtskip"/>
+    <Button
+        android:id="@+id/nxtbtn"
+
+        android:layout_width="240dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_style"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/asar"
+        android:shadowRadius="5"
+        android:text="Next"
+        android:layout_margin="30dp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/viewpaggersplash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="22sp" />
+    <com.zhpan.indicator.IndicatorView
+        android:id="@+id/indictor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nxtbtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

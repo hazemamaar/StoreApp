@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/splashphoto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/shop1"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/splashtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/manjari_bold"
+        android:text="Buy"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/descriptionsplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/arsenal_italic"
+        android:text="       We giving regularly reward to our \n                        lucky clients."
+        android:textColor="@color/black"
+
+        android:textSize="20sp" />
+
+
+
+</LinearLayout>
