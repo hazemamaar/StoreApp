@@ -14,13 +14,15 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="text_input_style" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="text_input_style"
+        parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="boxCornerRadiusBottomEnd">@dimen/_15sdp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/_15sdp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/_15sdp</item>
         <item name="boxCornerRadiusTopStart">@dimen/_15sdp</item>
         <item name="boxStrokeColor">@color/gray</item>
         <item name="boxStrokeWidth">0dp</item>
+        <item name="android:textColorHint">@color/darkblue</item>
         <item name="maxLines">1</item>
         <item name="boxBackgroundColor">@color/inputcolor</item>
         <item name="helperTextTextColor">@color/whiteB</item>
