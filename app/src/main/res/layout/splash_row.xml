@@ -7,13 +7,12 @@
 
     <ImageView
         android:id="@+id/splashphoto"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/shop1"
-        android:layout_gravity="center"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_200sdp"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView

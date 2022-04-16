@@ -46,8 +46,8 @@ public class OnBoarding extends Fragment {
         indicatorView.setPageSize(3);
         indicatorView.notifyDataChanged();
         Button btn_next;
-
         btn_next =view.findViewById(R.id.nxtbtn);
+
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
