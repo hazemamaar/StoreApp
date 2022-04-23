@@ -114,21 +114,21 @@
                    style="@style/text_input_style"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="25dp"
+                   android:layout_marginTop="@dimen/_20sdp"
                    android:hint="Username"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
                    app:layout_constraintTop_toBottomOf="@id/lineartxt"
                    app:layout_constraintBottom_toTopOf="@id/inputTextLayoutEmail"
-                   te
                    app:startIconDrawable="@drawable/user">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTextUserName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
+                        android:textSize="@dimen/_14ssp"
                         android:paddingTop="@dimen/_19ssp"
-                        android:paddingBottom="@dimen/_18ssp" />
+                       />
                </com.google.android.material.textfield.TextInputLayout>
 
                <com.google.android.material.textfield.TextInputLayout
@@ -136,7 +136,7 @@
                    style="@style/text_input_style"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="20dp"
+                   android:layout_marginTop="@dimen/_14sdp"
                    android:hint="E-Mail"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +148,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:padding="@dimen/_16ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:paddingTop="@dimen/_19ssp"/>
 
                </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,7 +158,7 @@
                    style="@style/text_input_style"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="20dp"
+                   android:layout_marginTop="@dimen/_14sdp"
                    android:hint="Mobile Number"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +170,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:padding="@dimen/_16ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:paddingTop="@dimen/_19ssp"/>
 
                </com.google.android.material.textfield.TextInputLayout>
                <com.google.android.material.textfield.TextInputLayout
@@ -177,7 +179,7 @@
                    style="@style/text_input_style"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="20dp"
+                   android:layout_marginTop="@dimen/_14sdp"
                    android:hint="Password"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
@@ -189,7 +191,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:padding="@dimen/_16ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:paddingTop="@dimen/_19ssp" />
 
                </com.google.android.material.textfield.TextInputLayout>
 
@@ -198,10 +201,11 @@
                    style="@style/button_style"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="20dp"
+                   android:layout_marginTop="@dimen/_16sdp"
                    android:fontFamily="@font/poppins_semibold"
                    android:text="Create Account"
                    android:textSize="@dimen/_12ssp"
+                   android:layout_marginBottom="@dimen/_6sdp"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
                    app:layout_constraintTop_toBottomOf="@id/inputTextLayoutPassword" />
@@ -210,16 +214,14 @@
                    android:id="@+id/or"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:textColor="@color/black"
+                   android:layout_marginTop="@dimen/_6sdp"
+                   android:fontFamily="@font/poppins_medium_italic"
                    android:text="OR"
-                   app:layout_constraintTop_toBottomOf="@id/createAccount_btn"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   android:layout_marginTop="@dimen/_12sdp"
-                   android:layout_marginBottom="@dimen/_12sdp"
+                   android:textColor="@color/black"
                    android:textSize="25dp"
-                   android:textStyle="bold"
-                   />
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/createAccount_btn" />
 
                <com.google.android.material.button.MaterialButton
                    android:id="@+id/facebook_btn"
@@ -230,7 +232,7 @@
                    android:text="Connect With Face Book"
                    android:textSize="@dimen/_12ssp"
                    app:layout_constraintEnd_toEndOf="parent"
-                   android:layout_marginTop="@dimen/_16ssp"
+                   android:layout_marginTop="@dimen/_6sdp"
                    app:layout_constraintStart_toStartOf="parent"
                    app:layout_constraintTop_toBottomOf="@+id/or" />
 
@@ -242,7 +244,7 @@
                    android:fontFamily="@font/poppins"
                    android:text="Connect With Face Book"
                    android:textSize="@dimen/_12ssp"
-                   android:layout_marginBottom="@dimen/_12sdp"
+                   android:layout_marginBottom="@dimen/_20sdp"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
                    app:layout_constraintTop_toBottomOf="@+id/facebook_btn" />

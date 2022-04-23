@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.StoreApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/darkblue</item>
         <item name="colorPrimaryVariant">@color/whiteblue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -16,13 +16,12 @@
 
     <style name="text_input_style"
         parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="boxCornerRadiusBottomEnd">@dimen/_15sdp</item>
-        <item name="boxCornerRadiusBottomStart">@dimen/_15sdp</item>
-        <item name="boxCornerRadiusTopEnd">@dimen/_15sdp</item>
-        <item name="boxCornerRadiusTopStart">@dimen/_15sdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>
         <item name="boxStrokeColor">@color/gray</item>
         <item name="boxStrokeWidth">0dp</item>
-        <item name="android:textColorHint">@color/darkblue</item>
         <item name="maxLines">1</item>
         <item name="boxBackgroundColor">@color/inputcolor</item>
         <item name="helperTextTextColor">@color/whiteB</item>
@@ -34,6 +33,7 @@
     <item name="textAllCaps">false</item>
     <item name="android:textColor">@color/white</item>
     <item name="android:padding">@dimen/_12sdp</item>
+
     </style>
 
     <style name="button_facebook_style" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
@@ -41,7 +41,6 @@
         <item name="backgroundTint">#4267B2</item>
         <item name="textAllCaps">false</item>
         <item name="android:textColor">@color/white</item>
-
         <item name="android:padding">@dimen/_12sdp</item>
         <item name="icon">@drawable/facebook</item>
         <item name="iconTint">@color/white</item>

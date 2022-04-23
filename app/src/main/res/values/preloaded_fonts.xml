@@ -6,6 +6,7 @@
         <item>@font/poppins</item>
         <item>@font/poppins_bold</item>
         <item>@font/poppins_italic</item>
+        <item>@font/poppins_medium_italic</item>
         <item>@font/poppins_semibold_italic</item>
         <item>@font/poppins_thin_italic</item>
         <item>@font/roboto_bold</item>

@@ -5,13 +5,18 @@
       <map>
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable/button_style.xml" value="0.239" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable/buttonstyle.xml" value="0.1835" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1275" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable/ic_search.xml" value="0.1835" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/drawable/phone.xml" value="0.178" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/activity_product.xml" value="0.234375" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_on_boarding.xml" value="0.1" />
-        <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_registration.xml" value="0.25" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_product.xml" value="0.25" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_registration.xml" value="0.2" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_registration1.xml" value="0.25" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/product_row.xml" value="0.25" />
         <entry key="..\:/Android Task/StoreApp/app/src/main/res/layout/splash_row.xml" value="0.2" />
       </map>
     </option>
