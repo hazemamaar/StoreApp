@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.PushProduct">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTextLayoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_Post_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:hint="Enter Title"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextTitel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="@dimen/_14ssp"
+            android:paddingTop="@dimen/_13ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTextLayoutCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_Post_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTextLayoutTitle"
+        android:layout_margin="@dimen/_10sdp"
+        android:hint="Enter Category"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="@dimen/_14ssp"
+            android:paddingTop="@dimen/_13ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTextLayoutDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_Post_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTextLayoutCategory"
+        android:layout_margin="@dimen/_10sdp"
+        android:hint="Enter Description"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="@dimen/_14ssp"
+            android:paddingTop="@dimen/_13ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTextLayoutRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_Post_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTextLayoutDes"
+        android:layout_margin="@dimen/_10sdp"
+        android:hint="Enter Rating"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="@dimen/_14ssp"
+            android:paddingTop="@dimen/_13ssp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

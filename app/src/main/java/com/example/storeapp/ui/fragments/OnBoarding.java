@@ -1,4 +1,4 @@
-package com.example.storeapp;
+package com.example.storeapp.ui.fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.storeapp.R;
+import com.example.storeapp.ui.adapters.SplashScreenRecyclerView;
 import com.zhpan.indicator.IndicatorView;
 import com.zhpan.indicator.enums.IndicatorSlideMode;
 import com.zhpan.indicator.enums.IndicatorStyle;

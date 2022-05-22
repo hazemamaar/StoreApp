@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/_10sdp"
     android:outlineSpotShadowColor="@color/gray"
+    android:layout_marginBottom="@dimen/_12sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_15sdp"
+        android:outlineSpotShadowColor="@color/gray"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,10 +26,12 @@
     >
     <ImageView
         android:id="@+id/productimg"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_170sdp"
+        android:layout_width="@dimen/_186sdp"
+        android:layout_height="@dimen/_120sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/jewelry"
         />
     <TextView
         android:id="@+id/txt_price"
@@ -55,19 +71,19 @@
          />
 
     <TextView
-        android:id="@+id/txt_desc"
+        android:id="@+id/txt_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_12sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:fontFamily="@font/average"
         android:hint="hazemfskdlsgikn"
         android:text="Hazemamar"
-        android:textColor="@color/labnyy"
-        android:textSize="@dimen/_11ssp"
+        android:textColor="@color/whiteblue"
+        android:textSize="@dimen/_15ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_category" />
     
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
- 
+</androidx.constraintlayout.widget.ConstraintLayout>

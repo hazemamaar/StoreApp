@@ -7,7 +7,7 @@
     android:layout_marginStart="@dimen/_10sdp"
     android:layout_marginEnd="@dimen/_10sdp"
     android:fillViewport="true"
-    tools:context=".Registration">
+    tools:context=".ui.fragments.Registration">
 
      <LinearLayout
          android:id="@+id/parentlinear"
@@ -99,6 +99,7 @@
                         android:textSize="@dimen/_11ssp" />
 
                     <TextView
+                        android:id="@+id/alread_have_acc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"

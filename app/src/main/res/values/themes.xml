@@ -55,4 +55,17 @@
         <item name="iconTint">@color/white</item>
         <item name="android:padding">@dimen/_12sdp</item>
     </style>
+
+    <style name="text_input_Post_style"
+        parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>
+        <item name="boxStrokeColor">@color/gray</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="maxLines">5</item>
+        <item name="boxBackgroundColor">@color/inputcolor</item>
+        <item name="helperTextTextColor">@color/whiteB</item>
+    </style>
 </resources>

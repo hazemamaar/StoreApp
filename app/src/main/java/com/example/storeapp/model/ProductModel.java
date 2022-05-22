@@ -1,5 +1,5 @@
 
-package com.example.storeapp;
+package com.example.storeapp.model;
 
 import java.util.HashMap;
 import java.util.Map;

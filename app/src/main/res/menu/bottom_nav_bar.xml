@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_frag"
+        android:enabled="true"
+        android:icon="@drawable/homepage"
+        android:title="Home"/>
+    <item
+        android:id="@+id/category_frag"
+        android:enabled="true"
+       android:icon="@drawable/category"
+        android:title="categories"/>
+    <item
+        android:id="@+id/fav_frag"
+        android:enabled="true"
+        android:icon="@drawable/redheart"
+        android:title="favorites"/>
+
+    <item
+        android:id="@+id/profile_frag"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="Profile"/>
+</menu>

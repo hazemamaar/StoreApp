@@ -1,10 +1,9 @@
-package com.example.storeapp;
+package com.example.storeapp.ui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import java.util.List;
+import com.example.storeapp.R;
 
 public class SplashScreenRecyclerView extends RecyclerView.Adapter<SplashScreenRecyclerView.SplashViewHolder> {
 
