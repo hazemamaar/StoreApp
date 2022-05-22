@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_signInFragment_to_registration"
             app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_signInFragment_to_productActivity"
+            app:destination="@id/productActivity" />
     </fragment>
     <activity
         android:id="@+id/productActivity"

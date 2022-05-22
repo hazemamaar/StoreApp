@@ -7,6 +7,7 @@ import com.example.storeapp.model.ProductModel;
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.Call;
 
 public class DefualtRepo {
  RetrofitService retrofitService;
@@ -15,7 +16,11 @@ public class DefualtRepo {
         this.retrofitService = RetrofitConnection.getRetrofit();
     }
 
-    public Observable<List<ProductModel>> getAllProducts() {
+    public Call<List<ProductModel>> getAllProducts() {
        return retrofitService.getProducts();
+    }
+
+    public Observable<List<ProductModel>> getAllProducts2() {
+        return retrofitService.getProducts2();
     }
 }

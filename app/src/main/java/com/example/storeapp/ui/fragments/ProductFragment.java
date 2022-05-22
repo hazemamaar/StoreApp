@@ -51,8 +51,8 @@ public class ProductFragment extends Fragment {
         productsViewModel= new ViewModelProvider(this).get(ProductsViewModel.class);
 
         productsViewModel.getAllProducts(defualtRepo);
-//        productsViewModel.liveData.observe(getActivity(), productModels ->
-//                Toast.makeText(getContext(),"done"+productModels.size(),Toast.LENGTH_SHORT).show());
+        productsViewModel.liveData.observe(getActivity(), productModels ->
+               Toast.makeText(getContext(),"ts"+productModels.size(),Toast.LENGTH_SHORT).show());
     }
 
     @Override

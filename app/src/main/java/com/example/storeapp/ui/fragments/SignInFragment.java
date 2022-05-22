@@ -52,7 +52,7 @@ public class SignInFragment extends Fragment {
                                         putString("Password", binding.inputTextPassword.getText().toString()).apply();
                                 editor.commit();
                                 Log.i("HAZ", "TRue"); }
-                    Navigation.findNavController(getView()).navigate(R.id.action_splashScreen_to_productActivity);
+                    Navigation.findNavController(getView()).navigate(R.id.action_signInFragment_to_productActivity);
                 }else{
                     Toast.makeText(getContext(),"Login Fail",Toast.LENGTH_SHORT).show();
                 }

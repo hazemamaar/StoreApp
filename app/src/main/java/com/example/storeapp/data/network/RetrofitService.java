@@ -12,8 +12,9 @@ import retrofit2.http.Path;
 public interface RetrofitService {
 
     @GET("products")
-    Observable<List<ProductModel>> getProducts();
-
+    Call<List<ProductModel>> getProducts();
+    @GET("products")
+    Observable<List<ProductModel>> getProducts2();
     @GET("products/category/{category}")
     Call<List<ProductModel>> getCategory( @Path("category") String category );
 
