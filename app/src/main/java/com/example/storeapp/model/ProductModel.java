@@ -22,11 +22,11 @@ public class ProductModel {
 
     private Rating rating;
 
+    private Boolean inFav=false;
 
 
     public ProductModel() {
     }
-
 
     public ProductModel(Integer id, String title, Double price, String description, String category, String image, Rating rating) {
         super();
@@ -38,7 +38,15 @@ public class ProductModel {
         this.image = image;
         this.rating = rating;
     }
-
+    public ProductModel(Integer id, String title, Double price, String description, String category, String image) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.image = image;
+    }
 
     public Integer getId() {
         return id;

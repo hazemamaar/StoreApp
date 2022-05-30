@@ -18,6 +18,7 @@ public class AuthRepo {
     public AuthRepo(Application application) {
         this.application = application;
     }
+
     public void registerWithFirebase(String email, String password,MutableLiveData<FirebaseUser>mutableLiveData){
         FirebaseConnect.firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(application.getMainExecutor(),new OnCompleteListener<AuthResult>() {
             @Override

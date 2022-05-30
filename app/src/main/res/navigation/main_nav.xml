@@ -17,12 +17,12 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/category_frag"
-        android:name="com.example.storeapp.ui.fragments.Category"
+        android:name="com.example.storeapp.ui.fragments.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/fav_frag"
-        android:name="com.example.storeapp.ui.fragments.Favorites"
+        android:name="com.example.storeapp.ui.fragments.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
 </navigation>

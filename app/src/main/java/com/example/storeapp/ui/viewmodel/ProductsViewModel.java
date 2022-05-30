@@ -15,14 +15,14 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class ProductsViewModel extends ViewModel {
 
-    MutableLiveData<List<ProductModel>> mutableLiveData=new MutableLiveData<>();
-   public LiveData<List<ProductModel>>liveData=mutableLiveData;
+    MutableLiveData<List<ProductModel>> productMutableLiveData=new MutableLiveData<>();
+   public LiveData<List<ProductModel>>productLiveData=productMutableLiveData;
     public void getAllProducts(DefualtRepo defualtRepo){
         defualtRepo.getAllProducts2().
                 subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).
                 subscribe(productModels -> {
-                mutableLiveData.setValue(productModels);
+                    productMutableLiveData.setValue(productModels);
                 });
 
 //        defualtRepo.getAllProducts().enqueue(new Callback<List<ProductModel>>() {
