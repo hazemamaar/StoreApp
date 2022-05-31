@@ -56,10 +56,4 @@ public class CategoryFragment extends Fragment {
          binding.categoryRecyclerview.setLayoutManager(new LinearLayoutManager(context));
         binding.categoryRecyclerview.setAdapter(categoryRecyclerViewAdapter);
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        getFragmentManager().beginTransaction().remove(CategoryFragment.this).commitAllowingStateLoss();
-    }
 }
