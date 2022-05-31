@@ -97,4 +97,6 @@ dependencies {
 
     //roomwithroom
     implementation "androidx.room:room-rxjava3:$room_version"
+//circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

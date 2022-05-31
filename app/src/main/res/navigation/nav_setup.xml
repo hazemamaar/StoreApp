@@ -15,6 +15,11 @@
         <action
             android:id="@+id/action_splashScreen_to_productActivity"
             app:destination="@id/productActivity" />
+        <action
+            android:id="@+id/action_splashScreen_pop"
+            app:destination="@id/productActivity"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/onBoarding"

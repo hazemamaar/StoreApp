@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +37,7 @@ public class SplashScreen extends Fragment {
                 if(test==null){
                     navController.navigate(R.id.action_splashScreen_to_onBoarding);
                 }else{
-                    Log.i("Ha", "runBefor: ");
                     navController.navigate(R.id.action_splashScreen_to_productActivity);
-                    Log.i("Ha", "runAfter: ");
                 }
 
 
@@ -53,4 +50,5 @@ public class SplashScreen extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_splash_screen, container, false);
     }
+
 }

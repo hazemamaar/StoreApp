@@ -6,6 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.PushProduct">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/productimg_image"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/profile"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputTextLayoutTitle"
         android:layout_width="match_parent"
@@ -15,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/_10sdp"
         android:hint="Enter Title"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productimg_image"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputTextTitel"
@@ -61,27 +75,6 @@
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputTextDes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="@dimen/_14ssp"
-            android:paddingTop="@dimen/_13ssp"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputTextLayoutRating"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/text_input_Post_style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputTextLayoutDes"
-        android:layout_margin="@dimen/_10sdp"
-        android:hint="Enter Rating"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputTextRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"

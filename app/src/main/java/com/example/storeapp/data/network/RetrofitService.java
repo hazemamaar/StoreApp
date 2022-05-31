@@ -5,7 +5,9 @@ import com.example.storeapp.model.ProductModel;
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface RetrofitService {
@@ -18,5 +20,7 @@ public interface RetrofitService {
 
     @GET("products/categories")
      Observable<List<String>> getCategoryName();
+    @POST("products")
+    Observable<List<ProductModel>>postProduct(@Body ProductModel productModel);
 
 }
