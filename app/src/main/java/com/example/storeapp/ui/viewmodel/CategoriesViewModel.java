@@ -1,5 +1,7 @@
 package com.example.storeapp.ui.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -28,15 +30,12 @@ public class CategoriesViewModel extends ViewModel {
 
                     @Override
                     public void onNext(@NonNull List<String> strings) {
-                        if(strings.size()==0){
-                            categoryMutableLiveData.setValue(null);
-                        }else
                         categoryMutableLiveData.setValue(strings);
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-
+                        Log.i("hazooom", "onError: "+e.getLocalizedMessage());
                     }
 
                     @Override

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,6 +24,7 @@ import com.example.storeapp.ui.communications.UICommunicationProductAdapter;
 import com.example.storeapp.ui.viewmodel.ProductsViewModel;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
@@ -44,12 +46,20 @@ public class ProductFragment extends Fragment implements UICommunicationProductA
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        init(getView());
-        productDatabase = ProductDatabase.getInstance(getContext());
+        init();
 
+        }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        AtomicInteger i= new AtomicInteger();
+        productDatabase = ProductDatabase.getInstance(getContext());
         productsViewModel.productLiveData.observe(getActivity(), productModels -> {
             binding.spinKit.setVisibility(View.GONE);
-            setUpRecyclerView(productModels,getContext());
+            i.getAndIncrement();
+            Toast.makeText(getContext(), "error"+i, Toast.LENGTH_SHORT).show();
+            setUpRecyclerView(productModels, getContext());
         });
     }
 
@@ -60,7 +70,7 @@ public class ProductFragment extends Fragment implements UICommunicationProductA
         return binding.getRoot();
 
     }
-    void init(View view){
+    void init(){
         defualtRepo =new DefualtRepo();
         productsViewModel= new ViewModelProvider(this).get(ProductsViewModel.class);
         productsViewModel.getAllProducts(defualtRepo);
@@ -90,13 +100,11 @@ public class ProductFragment extends Fragment implements UICommunicationProductA
 
             @Override
             public void onComplete() {
-                Toast.makeText(requireContext(), "Done", Toast.LENGTH_SHORT).show();
                 Log.i("HAZEM", "onComplete: ");
             }
 
             @Override
             public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
-                Toast.makeText(requireContext(), "Done", Toast.LENGTH_SHORT).show();
                 Log.i("HAZEM", "onError: " + e.getLocalizedMessage());
             }
         });

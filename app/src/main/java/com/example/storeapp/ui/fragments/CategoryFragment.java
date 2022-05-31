@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,12 +30,14 @@ public class CategoryFragment extends Fragment {
 
     }
 
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         init();
-        categoriesViewModel.categoryLiveData.observe(getActivity(), strings -> {setUpRecyclerView(strings,getContext());
-        binding.spinKit.setVisibility(View.GONE);});
+        categoriesViewModel.categoryLiveData.observe(getActivity(), strings -> {
+            setUpRecyclerView(strings,getContext());
+            binding.spinKit.setVisibility(View.GONE);});
     }
 
     void init(){
@@ -49,7 +53,7 @@ public class CategoryFragment extends Fragment {
     }
     public void setUpRecyclerView(List<String> categoryModelList, Context context){
        categoryRecyclerViewAdapter =new CategoryRecyclerViewAdapter(context,categoryModelList);
-        binding.categoryRecyclerview.setLayoutManager(new LinearLayoutManager(context));
+         binding.categoryRecyclerview.setLayoutManager(new LinearLayoutManager(context));
         binding.categoryRecyclerview.setAdapter(categoryRecyclerViewAdapter);
     }
 

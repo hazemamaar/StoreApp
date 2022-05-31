@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -116,13 +115,11 @@ public class FavoritesFragment extends Fragment implements UICommunicationProduc
 
             @Override
             public void onComplete() {
-                Toast.makeText(getContext(), "Done", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
-                Toast.makeText(getContext(), "Done", Toast.LENGTH_SHORT).show();
                 Log.i("HAZEM", "onError: " + e.getLocalizedMessage());
             }
         });
