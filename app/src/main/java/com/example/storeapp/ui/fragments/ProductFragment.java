@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,47 +17,38 @@ import com.example.storeapp.data.local.ProductDatabase;
 import com.example.storeapp.databinding.FragmentProductBinding;
 import com.example.storeapp.model.ProductModel;
 import com.example.storeapp.model.ProductModelRoom;
-import com.example.storeapp.myrepo.DefualtRepo;
 import com.example.storeapp.ui.adapters.ProductRecyclerViewAdapter;
+import com.example.storeapp.ui.communications.SelectListener;
 import com.example.storeapp.ui.communications.UICommunicationProductAdapter;
 import com.example.storeapp.ui.viewmodel.ProductsViewModel;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
+import dagger.hilt.android.AndroidEntryPoint;
 import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-
-public class ProductFragment extends Fragment implements UICommunicationProductAdapter {
+@AndroidEntryPoint
+public class ProductFragment extends Fragment implements UICommunicationProductAdapter, SelectListener {
 
     private ProductRecyclerViewAdapter productRecyclerViewAdapter;
     ProductsViewModel productsViewModel;
-    DefualtRepo defualtRepo;
+
     FragmentProductBinding binding;
     ProductDatabase productDatabase;
 
+
     public ProductFragment() {
-
     }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        init();
-
-        }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        AtomicInteger i= new AtomicInteger();
+        init();
         productDatabase = ProductDatabase.getInstance(getContext());
         productsViewModel.productLiveData.observe(getActivity(), productModels -> {
             binding.spinKit.setVisibility(View.GONE);
-            i.getAndIncrement();
-            Toast.makeText(getContext(), "error"+i, Toast.LENGTH_SHORT).show();
             setUpRecyclerView(productModels, getContext());
         });
     }
@@ -66,18 +56,19 @@ public class ProductFragment extends Fragment implements UICommunicationProductA
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding=FragmentProductBinding.inflate(inflater,container,false);
+        binding = FragmentProductBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
-    void init(){
-        defualtRepo =new DefualtRepo();
-        productsViewModel= new ViewModelProvider(this).get(ProductsViewModel.class);
-        productsViewModel.getAllProducts(defualtRepo);
-    }
-    void setUpRecyclerView(List<ProductModel>productModelList, Context context){
 
-        productRecyclerViewAdapter =new ProductRecyclerViewAdapter(context,productModelList,this);
+    void init() {
+        productsViewModel = new ViewModelProvider(this).get(ProductsViewModel.class);
+        productsViewModel.getAllProducts();
+    }
+
+    void setUpRecyclerView(List<ProductModel> productModelList, Context context) {
+
+        productRecyclerViewAdapter = new ProductRecyclerViewAdapter(context, productModelList, this, this);
         binding.ProductRec.setLayoutManager(new LinearLayoutManager(context));
         binding.ProductRec.setAdapter(productRecyclerViewAdapter);
 
@@ -108,5 +99,13 @@ public class ProductFragment extends Fragment implements UICommunicationProductA
                 Log.i("HAZEM", "onError: " + e.getLocalizedMessage());
             }
         });
+    }
+
+
+    @Override
+    public void onItemClick(ProductModel productModel) {
+        ProductFragmentDirections.ActionHomeFragToShowCompleteProduct action =
+                ProductFragmentDirections.actionHomeFragToShowCompleteProduct(productModel);
+//        findNavController(getView()).navigate(action);
     }
 }

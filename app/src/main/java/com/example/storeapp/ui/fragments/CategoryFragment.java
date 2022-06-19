@@ -19,7 +19,10 @@ import com.example.storeapp.ui.viewmodel.CategoriesViewModel;
 
 import java.util.List;
 
+import dagger.hilt.android.AndroidEntryPoint;
 
+
+@AndroidEntryPoint
 public class CategoryFragment extends Fragment {
 
  FragmentCategoryBinding binding;
@@ -41,9 +44,9 @@ public class CategoryFragment extends Fragment {
     }
 
     void init(){
-        defualtRepo =new DefualtRepo();
+
         categoriesViewModel= new ViewModelProvider(this).get(CategoriesViewModel.class);
-        categoriesViewModel.getCategories(defualtRepo);
+        categoriesViewModel.getCategories();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

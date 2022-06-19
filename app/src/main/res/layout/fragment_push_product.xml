@@ -11,13 +11,14 @@
         android:id="@+id/productimg_image"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
-        android:src="@drawable/profile"
+        android:src="@drawable/image_24"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"
+        app:civ_border_color="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintDimensionRatio="16:9"
         />
 
     <com.google.android.material.textfield.TextInputLayout

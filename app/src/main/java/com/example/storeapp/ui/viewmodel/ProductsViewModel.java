@@ -9,8 +9,12 @@ import androidx.lifecycle.ViewModel;
 import com.example.storeapp.model.ProductModel;
 import com.example.storeapp.myrepo.DefualtRepo;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
@@ -18,11 +22,20 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
-public class ProductsViewModel extends ViewModel {
 
+@HiltViewModel
+public class ProductsViewModel extends ViewModel  {
+
+    DefualtRepo defualtRepo;
     MutableLiveData<List<ProductModel>> productMutableLiveData=new MutableLiveData<>();
    public LiveData<List<ProductModel>>productLiveData=productMutableLiveData;
-    public void getAllProducts(DefualtRepo defualtRepo){
+
+    @Inject
+    public ProductsViewModel(DefualtRepo defualtRepo) {
+        this.defualtRepo = defualtRepo;
+    }
+
+    public void getAllProducts(){
         defualtRepo.getAllProducts2().
                 subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<List<ProductModel>>() {
@@ -41,6 +54,8 @@ public class ProductsViewModel extends ViewModel {
             @Override
             public void onError(@NonNull Throwable e) {
                 Log.i("error", "onError: "+e.getLocalizedMessage());
+                productMutableLiveData.setValue(new ArrayList<ProductModel>());
+
             }
 
             @Override

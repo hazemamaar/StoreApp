@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.storeapp.R;
 import com.example.storeapp.data.local.ProductDatabase;
 import com.example.storeapp.model.ProductModel;
+import com.example.storeapp.ui.communications.SelectListener;
 import com.example.storeapp.ui.communications.UICommunicationProductAdapter;
 import com.squareup.picasso.Picasso;
 
@@ -23,13 +25,19 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
     List<ProductModel> productList;
     ProductDatabase productDatabase;
     UICommunicationProductAdapter uiCommunicationProductAdapter;
-
+    private SelectListener selectListener;
+    public ProductRecyclerViewAdapter(Context context, List<ProductModel> productList, UICommunicationProductAdapter uiCommunicationProductAdapter,SelectListener selectListener) {
+        this.context = context;
+        this.productList = productList;
+        this.uiCommunicationProductAdapter = uiCommunicationProductAdapter;
+        this.selectListener=selectListener;
+    }
     public ProductRecyclerViewAdapter(Context context, List<ProductModel> productList, UICommunicationProductAdapter uiCommunicationProductAdapter) {
         this.context = context;
         this.productList = productList;
         this.uiCommunicationProductAdapter = uiCommunicationProductAdapter;
-    }
 
+    }
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,6 +53,13 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
         holder.categoryTxt.setText(productList.get(position).getCategory());
         Picasso.get().load(productList.get(position).getImage()).into(holder.productImg);
         ProductModel productModel = productList.get(position);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectListener.onItemClick(productList.get(position));
+            }
+        });
+
         holder.heartImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,12 +73,10 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
     public int getItemCount() {
         return productList.size();
     }
-
-
-    class ProductViewHolder extends RecyclerView.ViewHolder {
+    class ProductViewHolder extends RecyclerView.ViewHolder  {
         ImageView heartImg, productImg;
         TextView categoryTxt, titleTxt, priceTxt;
-
+        CardView cardView;
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             heartImg = itemView.findViewById(R.id.heartImg);
@@ -71,6 +84,7 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
             categoryTxt = itemView.findViewById(R.id.txt_category);
             titleTxt = itemView.findViewById(R.id.txt_Title);
             priceTxt = itemView.findViewById(R.id.txt_price);
+            cardView=itemView.findViewById(R.id.card_view_rec);
         }
     }
 }

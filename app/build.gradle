@@ -1,9 +1,12 @@
 plugins {
     id 'com.android.application'
-
+    id("androidx.navigation.safeargs")
+    id 'dagger.hilt.android.plugin'
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdk 32
 
@@ -27,6 +30,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     viewBinding {
         enabled = true
     }
@@ -99,4 +103,30 @@ dependencies {
     implementation "androidx.room:room-rxjava3:$room_version"
 //circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //easypre
+    // For developers using AndroidX in their applications
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    // For developers using the Android Support Library
+    implementation 'pub.devrel:easypermissions:2.0.1'
+
+    //crop
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    //image
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.38.1'
+//    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:2.38.1'
+   // annotationProcessor 'androidx.hilt:hilt-compiler:2.38.1'
+//    implementation 'androidx.hilt:hilt-navigation:2.38.1'
+
+
 }

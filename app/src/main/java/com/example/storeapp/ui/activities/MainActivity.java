@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.storeapp.databinding.ActivityMainBinding;
 import com.example.storeapp.uitils.AppStatus;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
      ActivityMainBinding binding;
     @Override

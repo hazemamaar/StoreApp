@@ -4,6 +4,8 @@ pluginManagement {
         google()
         maven { url 'https://jitpack.io' }
         mavenCentral()
+        mavenCentral()
+
     }
 }
 dependencyResolutionManagement {
@@ -11,7 +13,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         maven { url 'https://jitpack.io' }
+        jcenter()
         mavenCentral()
+        mavenCentral()
+
     }
 }
 rootProject.name = "Store App"

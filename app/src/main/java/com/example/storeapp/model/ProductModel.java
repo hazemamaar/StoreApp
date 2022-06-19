@@ -1,11 +1,14 @@
 
 package com.example.storeapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class ProductModel {
+public class ProductModel implements Parcelable {
 
 
     private Integer id;
@@ -47,6 +50,37 @@ public class ProductModel {
         this.category = category;
         this.image = image;
     }
+
+    protected ProductModel(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        title = in.readString();
+        if (in.readByte() == 0) {
+            price = null;
+        } else {
+            price = in.readDouble();
+        }
+        description = in.readString();
+        category = in.readString();
+        image = in.readString();
+        byte tmpInFav = in.readByte();
+        inFav = tmpInFav == 0 ? null : tmpInFav == 1;
+    }
+
+    public static final Creator<ProductModel> CREATOR = new Creator<ProductModel>() {
+        @Override
+        public ProductModel createFromParcel(Parcel in) {
+            return new ProductModel(in);
+        }
+
+        @Override
+        public ProductModel[] newArray(int size) {
+            return new ProductModel[size];
+        }
+    };
 
     public Integer getId() {
         return id;
@@ -112,55 +146,32 @@ public class ProductModel {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id);
+        }
+        dest.writeString(title);
+        if (price == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeDouble(price);
+        }
+        dest.writeString(description);
+        dest.writeString(category);
+        dest.writeString(image);
+        dest.writeByte((byte) (inFav == null ? 0 : inFav ? 1 : 2));
+    }
 }
 
 
 
-class Rating {
-
-    private Double rate;
-
-    private Integer count;
-
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-
-    public Rating() {
-    }
-
-    public Rating(Double rate, Integer count) {
-        super();
-        this.rate = rate;
-        this.count = count;
-    }
-
-
-    public Double getRate() {
-        return rate;
-    }
-
-
-    public void setRate(Double rate) {
-        this.rate = rate;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
-}

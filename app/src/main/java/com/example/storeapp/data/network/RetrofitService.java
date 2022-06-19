@@ -4,6 +4,7 @@ import com.example.storeapp.model.ProductModel;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -21,6 +22,6 @@ public interface RetrofitService {
     @GET("products/categories")
      Observable<List<String>> getCategoryName();
     @POST("products")
-    Observable<List<ProductModel>>postProduct(@Body ProductModel productModel);
+    Completable postProduct(@Body ProductModel productModel);
 
 }
