@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.storeapp.model.ProductModel;
+import com.example.storeapp.model.ProductModelRoom;
 import com.example.storeapp.myrepo.DefualtRepo;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -76,4 +78,22 @@ public class ProductsViewModel extends ViewModel  {
 //        });
     }
 
+    public void insertProduct(ProductModelRoom productModelRoom){
+        defualtRepo.insertProduct(productModelRoom).subscribeOn(Schedulers.computation()).subscribe(new CompletableObserver() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i("gpa", "done");
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+        });
+    }
 }

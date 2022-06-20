@@ -21,4 +21,7 @@ public interface ProductsDao {
 
     @Query("select * from products_table")
     Observable<List<ProductModelRoom>> getProductsFromRoom();
+
+    @Query("delete from products_table where id =:idproduct")
+    public Completable deleteProduct(Integer idproduct);
 }

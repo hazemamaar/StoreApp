@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.storeapp.databinding.FragmentShowCompleteProductBinding;
 import com.example.storeapp.model.ProductModel;
@@ -35,8 +36,16 @@ public class ShowCompleteProduct extends Fragment  {
         binding.txtDec.setText(model.getDescription());
         binding.ratingBar.setEnabled(false);
         binding.ratingBar.setRating(model.getRating().getRate().floatValue());
+        binding.txtPrice.setText(model.getPrice().toString());
+        binding.backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Navigation.findNavController(getView()).popBackStack();
+            }
+        });
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

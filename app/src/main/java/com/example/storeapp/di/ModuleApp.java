@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 @InstallIn(SingletonComponent.class)
-public class RetrofitModule {
+public class ModuleApp {
 
     @Provides
     @Singleton
