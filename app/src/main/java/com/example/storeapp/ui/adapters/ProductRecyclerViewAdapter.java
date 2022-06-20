@@ -23,7 +23,6 @@ import java.util.List;
 public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecyclerViewAdapter.ProductViewHolder> {
     Context context;
     List<ProductModel> productList;
-    ProductDatabase productDatabase;
     UICommunicationProductAdapter uiCommunicationProductAdapter;
     private SelectListener selectListener;
     public ProductRecyclerViewAdapter(Context context, List<ProductModel> productList, UICommunicationProductAdapter uiCommunicationProductAdapter,SelectListener selectListener) {
@@ -47,7 +46,6 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        productDatabase = ProductDatabase.getInstance(context.getApplicationContext());
         holder.priceTxt.setText(productList.get(position).getPrice().toString() + "$");
         holder.titleTxt.setText(productList.get(position).getTitle());
         holder.categoryTxt.setText(productList.get(position).getCategory());
@@ -59,12 +57,12 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
                 selectListener.onItemClick(productList.get(position));
             }
         });
-
         holder.heartImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 holder.heartImg.setImageResource(R.drawable.redheart);
                 uiCommunicationProductAdapter.onFavClicked(productModel);
+
             }
         });
     }

@@ -12,8 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.storeapp.data.local.ProductDatabase;
-import com.example.storeapp.data.local.ProductsDao;
 import com.example.storeapp.databinding.FragmentFavoritesBinding;
 import com.example.storeapp.model.ProductModel;
 import com.example.storeapp.model.ProductModelRoom;
@@ -26,8 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import javax.inject.Inject;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 
@@ -38,10 +34,7 @@ public class FavoritesFragment extends Fragment implements UICommunicationProduc
 
     private ProductRecyclerViewAdapter productRecyclerViewAdapter;
     FragmentFavoritesBinding binding;
-    ProductDatabase productDatabase;
     FavoritesViewModel favoritesViewModel;
-    @Inject
-    ProductsDao productsDao;
     public FavoritesFragment() {
 
     }
@@ -95,7 +88,7 @@ public class FavoritesFragment extends Fragment implements UICommunicationProduc
     public void onFavClicked(ProductModel productModel) {
         ProductModelRoom productModelRoom = new ProductModelRoom(productModel.getId(), productModel.getTitle(),
                 productModel.getPrice(), productModel.getDescription(), productModel.getCategory(), productModel.getImage());
-           favoritesViewModel.deleteProduct(productModelRoom.getId());
+                favoritesViewModel.deleteProduct(productModelRoom.getId());
 
 
 //        productsDao.insert(productModelRoom).subscribeOn(Schedulers.computation()).subscribe(new CompletableObserver() {

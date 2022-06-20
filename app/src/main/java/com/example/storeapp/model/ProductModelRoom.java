@@ -20,7 +20,6 @@ public class ProductModelRoom {
         private String image;
 
 
-
         public ProductModelRoom() {
         }
 
@@ -87,6 +86,7 @@ public class ProductModelRoom {
         public void setImage(String image) {
             this.image = image;
         }
+
 
 }
 

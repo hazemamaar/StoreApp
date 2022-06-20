@@ -4,9 +4,6 @@ package com.example.storeapp.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.HashMap;
-import java.util.Map;
-
 
 public class ProductModel implements Parcelable {
 
@@ -171,6 +168,7 @@ public class ProductModel implements Parcelable {
         dest.writeString(image);
         dest.writeByte((byte) (inFav == null ? 0 : inFav ? 1 : 2));
     }
+
 }
 
 

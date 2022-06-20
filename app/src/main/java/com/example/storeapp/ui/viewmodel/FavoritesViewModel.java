@@ -1,5 +1,7 @@
 package com.example.storeapp.ui.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -44,7 +46,7 @@ public class FavoritesViewModel extends ViewModel {
 
               @Override
               public void onError(@NonNull Throwable e) {
-
+                  Log.i("gmgmgm", "onError: "+e.getLocalizedMessage());
               }
 
               @Override
